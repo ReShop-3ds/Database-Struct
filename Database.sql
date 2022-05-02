@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : Dim 01 mai 2022 à 16:17
+-- Généré le : lun. 02 mai 2022 à 16:37
 -- Version du serveur :  5.7.38-cll-lve
 -- Version de PHP : 7.3.28
 
@@ -68,6 +68,26 @@ CREATE TABLE `news` (
   `banner_url` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `title`
+--
+
+CREATE TABLE `title` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `icon_url` varchar(255) NOT NULL,
+  `banner_url` varchar(255) NOT NULL,
+  `platform_name` varchar(255) NOT NULL,
+  `publisher_name` varchar(255) NOT NULL,
+  `titleid` varchar(255) NOT NULL,
+  `release_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `product_code` varchar(255) NOT NULL,
+  `new` tinyint(1) NOT NULL,
+  `category_id` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
 --
 -- Index pour les tables déchargées
 --
@@ -92,6 +112,12 @@ ALTER TABLE `news`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `title`
+--
+ALTER TABLE `title`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -111,6 +137,12 @@ ALTER TABLE `directory`
 -- AUTO_INCREMENT pour la table `news`
 --
 ALTER TABLE `news`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `title`
+--
+ALTER TABLE `title`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
